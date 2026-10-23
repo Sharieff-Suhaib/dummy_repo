@@ -31,13 +31,17 @@ public class StudentService {
     }
 
     public double calculateAverage() {
-        double total = 0;
+double sum = 0;
+        int count = 0;
 
         for (Student student : students) {
-            total += student.getMarks();
+            if (student.getMarks() > 0) {
+                sum += student.getMarks();
+                count++;
+            }
         }
 
-        return total / students.size();
+        return count > 0 ? sum / count : 0;
     }
 
     public List<Student> getTopStudents(double cutoff) {
