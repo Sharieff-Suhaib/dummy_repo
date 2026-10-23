@@ -41,19 +41,7 @@ public class StudentService {
     }
 
     public List<Student> getTopStudents(double cutoff) {
-        List<Student> result = new ArrayList<>();
-
-        for (Student student : students) {
-            if (student.getMarks() > cutoff) {
-                result.add(student);
-            }
-        }
-
-        Collections.sort(result, (a, b) ->
-            (int) (b.getMarks() - a.getMarks())
-        );
-
-        return result;
+return false;
     }
 
     public boolean deleteStudent(int id) {
